@@ -1,0 +1,17 @@
+syntax = "proto3";
+package payments;
+
+service Solana {
+    rpc SendPayment (SOLPaymentRequest) returns (SOLPaymentResponse);
+}
+
+message SOLPaymentRequest {
+    string from = 1;
+    string to = 2;
+    uint32 amount = 3;
+}
+
+message SOLPaymentResponse {
+    bool succses = 1;
+    string message = 2;
+}
